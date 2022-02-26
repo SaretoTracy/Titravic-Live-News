@@ -2,7 +2,7 @@
 from app import app
 import urllib.request
 import json
-from models.news import Sources, Articles
+from app.news import Sources, Articles
 
 
 #Getting api key

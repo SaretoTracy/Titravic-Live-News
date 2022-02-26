@@ -1,5 +1,5 @@
 import unittest
-from models.news import Sources
+from app.news import Sources
 
 
 class NewsTest(unittest.TestCase):

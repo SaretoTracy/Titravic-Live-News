@@ -22,16 +22,16 @@ def articles(source_id):
 
     return render_template('articles.html', title=title, articles=articles)
 
-
-
 @app.route('/tech')
 def technology():
     '''
     View technology page function that returns the technology page and its data
     '''
-    technology = get_articles_by_category_of_the_source('technology')
-    title = 'Technology-News'
-    return render_template('tech.html',
-                           title=title,
-                           technology=technology
-                           )
+    technology = get_articles_by_category_of_the_source('tech')
+    title = 'Technology - News'
+    return render_template('tech.html',title=title,tech=technology)
+                           
+                           
+                           
+
+
