@@ -15,7 +15,7 @@ base_url_articles = app.config['NEWS_API_ARTICLES_URL']
 
 def process_sources_results(source_list):
     '''
-    Function that processes the source list result and transform them to a list of Objects
+    Function to process source list result and transform them to a list of Objects
     '''
     source_results = []
     for source_item in source_list:
