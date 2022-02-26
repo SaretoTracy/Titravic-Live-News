@@ -97,7 +97,7 @@ def process_articles_results(articles_list):
 
 
 
-def get_articles_depending_on_category_of_the_source(category):
+def get_articles_by_category_of_the_source(category):
     '''
     Function that gets the json response to our url request using the category 
     '''
