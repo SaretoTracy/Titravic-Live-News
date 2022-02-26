@@ -29,7 +29,7 @@ def technology():
     '''
     technology = get_articles_by_category_of_the_source('tech')
     title = 'Technology - News'
-    return render_template('tech.html',title=title,tech=technology)
+    return render_template('tech.html',title=title,technology=technology)
                            
                            
                            

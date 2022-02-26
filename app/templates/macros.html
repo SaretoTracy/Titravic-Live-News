@@ -1,0 +1,3 @@
+{% macro displayNewsSources(sources) %} {% for source in sources %}
+
+<a href="/news-source/articles/{{ source.id }}" class="btn btn-primary mb-2">{{ source.name }}</a> {% endfor %} {% endmacro %}
