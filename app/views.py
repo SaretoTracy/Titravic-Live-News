@@ -10,3 +10,14 @@ def index():
     View root page function that returns the index page and its data
     '''
     return render_template('index.html')
+
+@app.route('/news-source/articles/<source_id>')
+def articles(source_id):
+    '''
+    View articles page => function that returns the articles page from a source id 
+    '''
+    # Getting articles based on the source id
+    articles = get_articles(source_id)
+    title = f'{source_id}'
+
+    return render_template('articles.html', title=title, articles=articles)
