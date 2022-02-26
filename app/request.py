@@ -13,6 +13,26 @@ base_url_source = app.config['NEWS_API_SOURCE_URL']
 base_url_articles = app.config['NEWS_API_ARTICLES_URL']
 
 
+def get_source():  # get all sources from the news api
+    '''
+    Function that gets the json response to our url request
+    '''
+    get_source_url = 'https://newsapi.org/v2/sources?apiKey={}'.format(api_key)
+    print(get_source_url)
+
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
+
+        source_results = None
+
+        if get_source_response['sources']:
+            source_results_list = get_source_response['sources']
+            source_results = process_sources_results(source_results_list)
+
+    return source_results
+
+
 def process_sources_results(source_list):
     '''
     Function to process source list result and transform them to a list of Objects
