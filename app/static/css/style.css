@@ -75,3 +75,11 @@ h4 {
 .details p a {
     color: #B7391E;
 }
+
+.error {
+    background-color: #B7391E;
+}
+
+.error h1 h2 {
+    color: #fff;
+}
