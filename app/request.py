@@ -1,12 +1,11 @@
 # Getting api key
 from app import app
-import urllib.request
-import json
-from app import news
+import urllib.request , json
 from app.news import Sources, Articles
 
 
-
+# sources = Sources.sources
+# articles =Articles.articles
 
 #Getting api key
 api_key = app.config['NEWS_API_KEY']
