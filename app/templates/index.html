@@ -1,6 +1,9 @@
 {% extends "base.html" %} {% block styles%} {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}"> {% endblock %}{% block content %}
 
+
+
+
 <div class="sources m-2">
     <div class="card p-2">
         <h3 class="text-uppercase headings">Top News Sources</h3>
@@ -28,7 +31,7 @@
 
 
 <div class="row">
-
+    <h2>Titravic Live News Articles</h2>
     {% for articles in articles %}
     <div class="col-md-4 articles">
 
@@ -38,22 +41,22 @@
             {% if articles.urlToImage %}
 
 
-            <img src="{{ articles.urlToImage }}" class="col-md-6 float-md-end mb-3 ms-md-3" width="200" alt="{{ articles.title }}">{% endif %}
+            <img src="{{ articles.urlToImage }}" class="col-md-6 float-md-end mb-3 ms-md-3 mage" alt="{{ articles.title }}">{% endif %}
 
 
             <h4 class="">{{ articles.title }}</h4>
             <p class="card-text"><small>{{ articles.description}}...</small></p>
 
-            <div class="d-flex justify-content-around">
-                <div>
-                    <p><strong><span>{{ articles.publishedAt
-                    }}</span></strong>
-                    </p>
-                </div>
-                <div class="text-center">
+            <div class="details">
+
+                <p><strong><span><small>{{ articles.publishedAt
+                    }}</small></span></strong>
+                </p>
+
+                <p>
                     <a href="{{ articles.url }}" target="_blank" class="color-main"><small>Read More <i
                 class="fa fa-arrow-right"></i></small> </a>
-                </div>
+                </p>
             </div>
         </div>
     </div>
