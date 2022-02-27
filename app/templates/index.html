@@ -44,6 +44,43 @@
 
 
 
+    <div class="clearfix">
+        <div class="row">
+            {% for articles in articles %}
+            <div class="col-md-3">
+                {% if articles.urlToImage %}
+
+
+                <img src="{{ articles.urlToImage }}" class="col-md-6 float-md-end mb-3 ms-md-3" alt="{{ articles.title }}">{% endif %}
+
+
+                <h6 class="">{{ articles.title }}</h6>
+                <p class="card-text"><small>{{ articles.description}}...</small></p>
+
+                <div class="d-flex justify-content-around">
+                    <div>
+                        <p><strong><span class="badge rounded-pill bg-warning text-dark">{{ articles.publishedAt
+                    }}</span></strong>
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{ articles.url }}" target="_blank" class="color-main"><small>Read More <i
+                class="fa fa-arrow-right"></i></small> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
 
 
 

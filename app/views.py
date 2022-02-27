@@ -17,6 +17,8 @@ def index():
     bbc_news_home = get_articles_from_source_selected('bbc-news', '2')
     cbc_news = get_articles_from_source_selected('cbc-news', '2')
 
+    articles_news = get_articles("general")
+
     
     title = 'Home - TITRAVIC LIVE NEWS '
     return render_template('index.html',
@@ -27,19 +29,20 @@ def index():
                            general=general_news,
                            cbc_news=cbc_news,
                            aljazeera=aljazeera,
+                           articles=articles_news
                            )
     
 
-@app.route('/articles/<source_id>')
-def articles(source_id):
-    '''
-    View articles page => function that returns the articles page from a source id 
-    '''
-    # Getting articles based on the source id
-    articles_news = get_articles("general")
-    title = f'{source_id}'
+# @app.route('/articles/<source_id>')
+# def articles(source_id):
+#     '''
+#     View articles page => function that returns the articles page from a source id 
+#     '''
+#     # Getting articles based on the source id
+#     articles_news = get_articles("general")
+#     title = f'{source_id}'
 
-    return render_template('articles.html', title=title, articles=articles_news)
+#     return render_template('articles.html', title=title, articles=articles_news)
 
 
  
