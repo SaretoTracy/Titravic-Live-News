@@ -9,14 +9,14 @@ def index():
     '''
     View root page function that returns the index page and its data
     '''
-    business_news =get_source('general')
+    general_news =get_source('general')
     # sports_news = get_articles_by_category_of_the_source('sports')
     # technology_news = get_articles_by_category_of_the_source('technology')
     # science_news = get_articles_by_category_of_the_source('science')
 
     
     title = 'Titravic Live New'
-    return render_template('index.html', title = title, business = business_news)
+    return render_template('index.html', title = title, general = general_news)
     
 
 # @app.route('/news-source/articles/<source_id>')

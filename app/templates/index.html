@@ -9,12 +9,23 @@
 </head>
 
 <body>
-    {% for business_news in business %}
-    <p>
-        {{business_news.name}}</p>
-    {%endfor%}
 
-    <p>HOMME</p>
+    <div class="sources m-2">
+        <div class="card p-2">
+            <h3 class="text-uppercase headings">top news sources</h3>
+            <div class="row">
+                <div class="col-md-6">
+
+                    {% for general_news in general %}
+                    <p>
+                        {{general_news.name}}<br> {{general_news.url}}
+                    </p>
+                    {%endfor%}
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
