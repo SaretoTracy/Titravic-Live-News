@@ -35,9 +35,9 @@ def technology():
     '''
     View technology page function that returns the technology page and its data
     '''
-    technology = get_articles('technology')
+    technology_news = get_source('technology')
     title = 'Technology - News'
-    return render_template('tech.html',title=title,technology=technology)
+    return render_template('tech.html',title=title,technology=technology_news)
 
 # @app.route('/health')
 # def health():
