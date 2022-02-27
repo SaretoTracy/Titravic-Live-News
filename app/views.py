@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_articles,get_articles_by_category_of_the_source, get_source
+from .request import get_articles_from_source_selected, get_source,get_articles
 
 # Views
 @app.route('/')
@@ -10,23 +10,22 @@ def index():
     View root page function that returns the index page and its data
     '''
     general_news =get_source('general')
-    bbcnews = get_articles('associated-press')
+    bbc_news = get_articles_from_source_selected('bbc-news', '8')
     # get articles from al-jazeera-english
-    aljazeera = get_articles('al-jazeera-english')
-    cnn_home = get_articles('cnn')
-    bbcnews_home = get_articles('bbc-news')
-    cbcnews = get_articles('cbc-news')
-    # sports_news = get_articles_by_category_of_the_source('sports')
-    # technology_news = get_articles_by_category_of_the_source('technology')
-    # science_news = get_articles_by_category_of_the_source('science')
-
-    
-    title = 'Titravic Live New'
-    return render_template('index.html', title = title, general = general_news,bcc=bbcnews_home,
-                           bbc_news=bbcnews,
+    aljazeera = get_articles_from_source_selected('al-jazeera-english', '8')
+    cnn_home = get_articles_from_source_selected('cnn', '1')
+    bbc_news_home = get_articles_from_source_selected('bbc-news', '2')
+    cbc_news = get_articles_from_source_selected('cbc-news', '2')
+    title = 'Home - Welcome to News App '
+    return render_template('index.html',
+                           title=title,
+                           bcc=bbc_news_home,
+                           bbc_news=bbc_news,
                            cnn_home=cnn_home,
-                           cbc_news=cbcnews,
-                           aljazeera=aljazeera,)
+                           general=general_news,
+                           cbc_news=cbc_news,
+                           aljazeera=aljazeera,
+                           )
     
 
 # @app.route('/news-source/articles/<source_id>')
