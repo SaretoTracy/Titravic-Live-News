@@ -5,9 +5,33 @@ body {
     padding: 0;
     max-width: 100%;
     overflow-x: hidden;
-    border: #b0371d;
+    background-color: white;
 }
 
-.navbar {
-    color: #b0371d;
+a {
+    text-decoration: none;
+}
+
+.sources {
+    background: #B7391E;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.sos p a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-family: 'Fruktur', cursive;
+    font-family: 'Fugaz One', cursive;
+    font-family: 'Lobster', cursive;
+    font-family: 'Luxurious Roman', cursive;
+    font-family: 'Monoton', cursive;
+    font-family: 'Righteous', cursive;
+    /* box-shadow: 0 0 11px 5px rgb(103 58 183 / 10%);
+    margin-bottom: 9px;
+    padding: 1px 1px;
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out; */
 }
