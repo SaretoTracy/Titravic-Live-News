@@ -2,7 +2,10 @@
 from app import app
 import urllib.request
 import json
+from app import news
 from app.news import Sources, Articles
+
+
 
 
 #Getting api key
@@ -17,7 +20,7 @@ def get_source():  # get all sources from the news api
     '''
     Function that gets the json response to our url request
     '''
-    get_source_url = 'https://newsapi.org/v2/sources?apiKey={}'.format(api_key)
+    get_source_url = base_url_source.format(api_key)
     print(get_source_url)
 
     with urllib.request.urlopen(get_source_url) as url:
@@ -57,7 +60,7 @@ def get_articles(source_id):
     '''
         Function that gets the json response to our url request using the source id
     '''
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(
+    get_articles_url = base_url_articles.format(
         source_id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -101,7 +104,7 @@ def get_articles_by_category_of_the_source(category):
     '''
     Function that gets the json response to our url request using the category 
     '''
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?category={}&apiKey={}'.format(
+    get_articles_url = base_url_articles.format(
         category, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
@@ -119,7 +122,7 @@ def get_articles_from_source_selected(source, pageLimitSize):
     '''
     Function that gets the json response to our url request using the source id and page size
     '''
-    get_articles_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}&pageSize={}'.format(source,
+    get_articles_url = base_url_articles.format(source,
                                                                                                       api_key, pageLimitSize)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()

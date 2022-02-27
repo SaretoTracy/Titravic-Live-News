@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import process_sources_results,process_articles_results,get_source,get_articles,get_articles_by_category_of_the_source,get_articles_from_source_selected
+from .request import get_articles,get_articles_by_category_of_the_source
 
 # Views
 @app.route('/')
@@ -27,9 +27,21 @@ def technology():
     '''
     View technology page function that returns the technology page and its data
     '''
-    technology = get_articles_by_category_of_the_source('tech')
+    technology = get_articles_by_category_of_the_source('technology')
     title = 'Technology - News'
-    return render_template('tech.html',title=title,technology=technology)
+    return render_template('tech.html',title=title,tech=technology)
+
+@app.route('/health')
+def health():
+    '''
+    View health page function that returns the health page and its data
+    '''
+    health = get_articles_by_category_of_the_source('health')
+    title = 'Health - Welcome to The best Hot News in the world'
+    return render_template('health.html',
+                           title=title,
+                           health=health
+                           )
                            
                            
                            

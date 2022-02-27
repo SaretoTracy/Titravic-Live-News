@@ -30,3 +30,5 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
+    
