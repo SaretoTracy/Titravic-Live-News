@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>{{tittle}}</title>
 </head>
 
@@ -12,20 +16,24 @@
 
     <div class="sources m-2">
         <div class="card p-2">
-            <h3 class="text-uppercase headings">top news sources</h3>
+            <h3 class="text-uppercase headings">Top News Sources</h3>
             <div class="row">
-                <div class="col-md-6">
 
-                    {% for general_news in general %}
+
+                {% for general_news in general %}
+                <div class="col-md-2">
                     <p>
-                        {{general_news.name}}<br> {{general_news.url}}
+                        {{general_news.name}}
                     </p>
-                    {%endfor%}
+
 
                 </div>
+                {%endfor%}
             </div>
         </div>
     </div>
+
+
 </body>
 
 </html>
