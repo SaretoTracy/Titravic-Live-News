@@ -1,27 +1,27 @@
 {% macro displayNewsSources(Sources) %} {% for source in Sources %}
 
-<a href="/news-source/Articles/{{ Sources.id }}" class="btn btn-primary mb-2">{{ Sources.name }}</a> {% endfor %} {% endmacro %}
+<a href="/news-source/Articles/{{ source.id }}" class="btn btn-primary mb-2">{{ source.name }}</a> {% endfor %} {% endmacro %}
 
 
 <!-- display article lists from the source -->
-{% macro displayNewsSourceArticles(Articles_list) %} {% for article in Articles_list %}
+{% macro displayNewsSourceArticles(articles_list) %} {% for article in articles_list %}
 
 <div class="col-md-3">
     <div class="card mb-4">
         {% if article.urlToImage %}
-        <img src="{{ Articles.urlToImage }}" class="card-img-top" alt="{{ Articles.title }}"> {% endif %}
+        <img src="{{ article.urlToImage }}" class="card-img-top" alt="{{ article.title }}"> {% endif %}
 
         <div class="card-body">
-            <h6 class="">{{ article.title }}</h6>
-            <p class="card-text"><small>{{ Articles.description[:110] }}...</small></p>
+            <h6 class="">{{ Article.title }}</h6>
+            <p class="card-text"><small>{{ article.description}}...</small></p>
             <div class="d-flex justify-content-around">
                 <div>
-                    <p><strong><span class="badge rounded-pill bg-warning text-dark"><small>{{ Articles.publishedAt
+                    <p><strong><span class="badge rounded-pill bg-warning text-dark"><small>{{ article.publishedAt
                                     }}</small></span></strong>
                     </p>
                 </div>
                 <div class="text-center">
-                    <a href="{{ Articles.url }}" target="_blank" class="color-main"><small>Read More <i
+                    <a href="{{ article.url }}" target="_blank" class="color-main"><small>Read More <i
                                 class="fa fa-arrow-right"></i></small> </a>
                 </div>
             </div>

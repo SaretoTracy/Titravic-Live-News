@@ -1,7 +1,7 @@
 # Getting api key
 from app import app
 import urllib.request , json
-from app.news import Sources, Articles
+from app.models.news import Sources, Articles
 
 
 # sources = Sources.sources
@@ -15,11 +15,11 @@ base_url_source = app.config['NEWS_API_SOURCE_URL']
 base_url_articles = app.config['NEWS_API_ARTICLES_URL']
 
 
-def get_source():  # get all sources from the news api
+def get_source(category):  # get all sources from the news api
     '''
     Function that gets the json response to our url request
     '''
-    get_source_url = base_url_source.format(api_key)
+    get_source_url = base_url_source.format(category,api_key)
     print(get_source_url)
 
     with urllib.request.urlopen(get_source_url) as url:
