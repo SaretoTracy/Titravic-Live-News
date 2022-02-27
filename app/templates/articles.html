@@ -1,9 +1,31 @@
-{% import 'macros.html' as macro%} {% extends "base.html" %} {% block content %}
-<!-- top  bbc news-->
-<div class="top-news m-2">
-    <h3 class="text-uppercase headings text-center mt-5 mb-4">Titravic news articles <br> <small>({{ title }})</small></h3>
-    <div class="row">
-        {{ macro.displayNewsSourceArticles(articles) }}
+<h1>bold</h1>
+
+{% for articles in articles %}
+
+
+<!-- <p> {{articles.title}}</p> -->
+
+<div class="col-md-3">
+    <div class="card mb-4">
+        {% if articles.urlToImage %}
+        <img src="{{ articles.urlToImage }}" class="card-img-top" alt="{{ articles.title }}"> {% endif %}
+
+        <div class="card-body">
+            <h6 class="">{{ articles.title }}</h6>
+            <p class="card-text"><small>{{ articles.description}}...</small></p>
+            <div class="d-flex justify-content-around">
+                <div>
+                    <p><strong><span class="badge rounded-pill bg-warning text-dark"><small>{{ articles.publishedAt
+                                }}</small></span></strong>
+                    </p>
+                </div>
+                <div class="text-center">
+                    <a href="{{ articles.url }}" target="_blank" class="color-main"><small>Read More <i
+                            class="fa fa-arrow-right"></i></small> </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-{% endblock %}
+
+{% endfor %}

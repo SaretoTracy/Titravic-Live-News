@@ -55,12 +55,12 @@ def process_sources_results(source_list):
     return source_results
 
 
-def get_articles(articles_id):
+def get_articles(source_id):
     '''
         Function that gets the json response to our url request using the source id
     '''
     get_articles_url = base_url_articles.format(
-        articles_id, api_key)
+        source_id, api_key)
     with urllib.request.urlopen(get_articles_url) as url:
         get_articles_data = url.read()
         get_articles_response = json.loads(get_articles_data)

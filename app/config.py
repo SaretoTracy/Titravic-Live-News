@@ -5,7 +5,7 @@ class Config:
     NEWS_API_KEY = 'NEWS_API_KEY'
     SECRET_KEY = 'SECRET_KEY'
     NEWS_API_SOURCE_URL = 'https://newsapi.org/v2/sources?category={}&apiKey={}'
-    NEWS_API_ARTICLES_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
+    NEWS_API_ARTICLES_URL =  'https://newsapi.org/v2/everything?q={}&sortBy=popularity&apiKey={}'
     
     pass
 

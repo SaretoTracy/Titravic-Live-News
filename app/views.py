@@ -16,11 +16,13 @@ def index():
     cnn_home = get_articles_from_source_selected('cnn', '1')
     bbc_news_home = get_articles_from_source_selected('bbc-news', '2')
     cbc_news = get_articles_from_source_selected('cbc-news', '2')
-    title = 'Home - Welcome to News App '
+
+    
+    title = 'Home - TITRAVIC LIVE NEWS '
     return render_template('index.html',
                            title=title,
                            bcc=bbc_news_home,
-                           bbc_news=bbc_news,
+                           bbc=bbc_news,
                            cnn_home=cnn_home,
                            general=general_news,
                            cbc_news=cbc_news,
@@ -28,38 +30,19 @@ def index():
                            )
     
 
-# @app.route('/news-source/articles/<source_id>')
-# def articles(source_id):
-#     '''
-#     View articles page => function that returns the articles page from a source id 
-#     '''
-#     # Getting articles based on the source id
-#     articles = get_articles(source_id)
-#     title = f'{source_id}'
-
-#     return render_template('articles.html', title=title, articles=articles)
-
-@app.route('/tech')
-def technology():
+@app.route('/articles/<source_id>')
+def articles(source_id):
     '''
-    View technology page function that returns the technology page and its data
+    View articles page => function that returns the articles page from a source id 
     '''
-    technology_news = get_source('technology')
-    title = 'Technology - News'
-    return render_template('tech.html',title=title,technology=technology_news)
+    # Getting articles based on the source id
+    articles_news = get_articles("general")
+    title = f'{source_id}'
 
-# @app.route('/health')
-# def health():
-#     '''
-#     View health page function that returns the health page and its data
-#     '''
-#     health = get_articles_by_category_of_the_source('health')
-#     title = 'Health - Welcome to The best Hot News in the world'
-#     return render_template('health.html',
-#                            title=title,
-#                            health=health
-#                            )
-                           
+    return render_template('articles.html', title=title, articles=articles_news)
+
+
+ 
                            
                            
 
