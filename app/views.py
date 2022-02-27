@@ -10,22 +10,22 @@ def index():
     View root page function that returns the index page and its data
     '''
     general_news =get_source('general')
-    bbc_news = get_source('bbc-news')
+    bbcnews = get_articles('associated-press')
     # get articles from al-jazeera-english
-    aljazeera = get_source('al-jazeera-english')
-    cnn_home = get_source('cnn')
-    bbc_news_home = get_source('bbc-news')
-    cbc_news = get_source('cbc-news')
+    aljazeera = get_articles('al-jazeera-english')
+    cnn_home = get_articles('cnn')
+    bbcnews_home = get_articles('bbc-news')
+    cbcnews = get_articles('cbc-news')
     # sports_news = get_articles_by_category_of_the_source('sports')
     # technology_news = get_articles_by_category_of_the_source('technology')
     # science_news = get_articles_by_category_of_the_source('science')
 
     
     title = 'Titravic Live New'
-    return render_template('index.html', title = title, general = general_news,bcc=bbc_news_home,
-                           bbc_news=bbc_news,
+    return render_template('index.html', title = title, general = general_news,bcc=bbcnews_home,
+                           bbc_news=bbcnews,
                            cnn_home=cnn_home,
-                           cbc_news=cbc_news,
+                           cbc_news=cbcnews,
                            aljazeera=aljazeera,)
     
 
