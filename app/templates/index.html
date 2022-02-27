@@ -27,17 +27,18 @@
 
 
 
-<div class="clearfix">
-    <div class="row">
+<div class="row">
 
-        {% for articles in articles %}
+    {% for articles in articles %}
+    <div class="col-md-4 articles">
 
-        <div class="col-md-6 articles">
+
+        <div class="clearfix">
 
             {% if articles.urlToImage %}
 
 
-            <img src="{{ articles.urlToImage }}" class="col-md-6 float-md-end mb-3 ms-md-3" alt="{{ articles.title }}">{% endif %}
+            <img src="{{ articles.urlToImage }}" class="col-md-6 float-md-end mb-3 ms-md-3" width="200" alt="{{ articles.title }}">{% endif %}
 
 
             <h4 class="">{{ articles.title }}</h4>
@@ -56,5 +57,6 @@
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
-{% endfor %} {% endblock %}
+{% endblock %}
