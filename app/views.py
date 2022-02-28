@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_source,get_articles
+from .request import get_source,get_articles,get_articles_headlines
 
 # Views
 @app.route('/')
@@ -13,13 +13,26 @@ def index():
     
 
     articles_news = get_articles("general")
+      # get articles from bbc-news
+    bbc_news = get_articles_headlines('bbc-news')
+    # get articles from al-jazeera-english
+    aljazeera = get_articles_headlines('al-jazeera-english')
+    cnn_home = get_articles_headlines('cnn')
+    bbc_news_home = get_articles_headlines('bbc-news')
+    cbc_news = get_articles_headlines('cbc-news')
 
     
     title = 'Home - TITRAVIC LIVE NEWS '
     return render_template('index.html',
                            title=title,
                            general=general_news,
-                           articles=articles_news
+                           articles=articles_news,
+                           bcc=bbc_news_home,
+                           bbc_news=bbc_news,
+                           cnn_home=cnn_home,
+                           cbc_news=cbc_news,
+                           aljazeera=aljazeera,
+                           
                            )
 
 
