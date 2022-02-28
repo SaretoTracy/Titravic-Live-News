@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_source,get_articles,get_articles_headlines
+from .request import get_source,get_articles,get_articles_headlines,get_articles_by_category
 
 # Views
 @app.route('/')
@@ -47,6 +47,21 @@ def articles():
     title = "TITRAVIC"
 
     return render_template('articles.html', title=title, articles=articles)
+
+
+
+@app.route('/sports')
+def sports():
+    '''
+    View sports page 
+    '''
+    sports =get_articles_by_category('sports')
+    title = 'Sports - Welcome to The best Hot News in the world'
+    return render_template('sports.html',
+                           title=title,
+                           sports=sports
+                           )
+
 
     
 
