@@ -5,9 +5,9 @@
     <h2>For the best sports news from around the world</h2>
 </div>
 
-<div class="sports">
+<div class="sports cate">
     {% for sports in sports %}
-    <div class=" sports-item">
+    <div class=" sports-item categories">
         <h4 class="sports-title">{{sports.title }}</h4>
         <img src="{{ sports.urlToImage }}" class="card-img-top" alt="{{ sports.title }}">
         <div class="desc">

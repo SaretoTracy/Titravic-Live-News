@@ -44,7 +44,7 @@ def articles():
     '''
     # Getting articles based on the source id
     articles = get_articles("general")
-    title = "TITRAVIC"
+    title = "TITRAVIC LIVE NEWS"
 
     return render_template('articles.html', title=title, articles=articles)
 
@@ -61,6 +61,21 @@ def sports():
                            title=title,
                            sports=sports
                            )
+
+
+
+@app.route('/business')
+def business():
+    '''
+    View business page function that returns the business page and its data
+    '''
+    business = get_articles_by_category('business')
+    title = 'business - Welcome to The best business News in the world'
+    return render_template('business.html',
+                           title=title,
+                           business=business
+                           )
+
 
 
     
