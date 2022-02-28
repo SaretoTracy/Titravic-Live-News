@@ -47,7 +47,7 @@ h3 {
 }
 
 h2 {
-    color: #B7391E;
+    color: #E73C18;
     text-align: center;
     font-family: 'Anton', sans-serif;
     font-family: 'EB Garamond', serif;
@@ -57,6 +57,7 @@ h2 {
     font-family: 'Luxurious Roman', cursive;
     font-family: 'Monoton', cursive;
     font-family: 'Righteous', cursive;
+    font-weight: 900;
 }
 
 .articles {

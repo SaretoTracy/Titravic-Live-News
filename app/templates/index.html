@@ -26,6 +26,21 @@
 
 
 <div class="row bcc">
+    <h2>BBC Top Headlines </h2>
+    {% for bcc in bcc %}
+    <div class="col-md-3 display">
+        <div class="card-image p-4 mb-3" style="background-image: url({{bcc.urlToImage}});">
+            <div class="headline">
+                <h4 class="news-headings mt-2"><a target="_blank" href="{{bcc.url}}">{{ bcc.title
+                                        }}</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="row bcc">
     <h2>CBC Top Headlines </h2>
     {% for cnn_news in cbc_news %}
     <div class="col-md-3 display">
@@ -42,14 +57,15 @@
 </div>
 
 <div class="row bcc">
-    <h2>BBC Top Headlines </h2>
-    {% for bcc in bcc %}
+    <h2>Aljazeera News Top Headlines </h2>
+    {% for aljazeera in aljazeera %}
     <div class="col-md-3 display">
-        <div class="card-image p-4 mb-3" style="background-image: url({{bcc.urlToImage}});">
+        <div class="card-image p-4 mb-3" style="background-image: url({{aljazeera.urlToImage}});">
             <div class="headline">
-                <h4 class="news-headings mt-2"><a target="_blank" href="{{bcc.url}}">{{ bcc.title
+                <h4 class="news-headings mt-2"><a target="_blank" href="{{aljazeera.url}}">{{ aljazeera.title
                                         }}</a>
                 </h4>
+                <button class="btn btn-primary news btn-sm mt-1">Aljazeera News</button>
             </div>
         </div>
     </div>
