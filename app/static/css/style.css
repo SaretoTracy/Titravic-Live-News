@@ -84,8 +84,14 @@ h4 {
     color: #fff;
 }
 
+.news {
+    background-color: #E73C18;
+    color: #fff;
+    border: none;
+    margin-top: 4rem;
+}
+
 .bcc {
-    border: 2px solid red;
     padding-top: 4rem;
 }
 
