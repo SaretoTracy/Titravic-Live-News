@@ -23,7 +23,7 @@ h3 {
     text-align: center;
     padding-bottom: 0.5rem;
     font-family: 'Righteous', cursive;
-    color: #fff;
+    color: black;
 }
 
 .sos p a {
@@ -82,4 +82,16 @@ h4 {
 
 .error h1 h2 {
     color: #fff;
+}
+
+.bcc {
+    border: 2px solid red;
+    padding-top: 4rem;
+}
+
+.card-image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
 }
