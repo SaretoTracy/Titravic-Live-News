@@ -24,9 +24,8 @@
     </div>
 </div>
 <!-- homepage -->
-<div class="homepage mt-4">
-    <div class="m-2">
-        <!-- <div class="row">
+
+<!-- <div class="row">
             <div class="col-md-6 news-right">
                 <div class="row">
                     {% for cnn_news in cbc_news %}
@@ -42,20 +41,18 @@
                     {% endfor %}
                 </div> -->
 
-        <div class="row bcc">
-            <h3>BBC Top Headlines </h3>
-            {% for bcc in bcc %}
-            <div class="col-md-6">
-                <div class="card-image p-4 mb-3" style="background-image: url({{bcc.urlToImage}});">
-                    <div class="headline-">
-                        <button class="btn btn-primary btn-sm mt-1">BBC News</button>
-                        <h5 class="news-headings mt-2"><a target="_blank" href="{{bcc.url}}">{{ bcc.title
+<div class="row bcc">
+    <h2>BBC Top Headlines </h2>
+    {% for bcc in bcc %}
+    <div class="col-md-3 display">
+        <div class="card-image p-4 mb-3" style="background-image: url({{bcc.urlToImage}});">
+            <div class="headline">
+                <h4 class="news-headings mt-2"><a target="_blank" href="{{bcc.url}}">{{ bcc.title
                                         }}</a>
-                        </h5>
-                    </div>
-                </div>
+                </h4>
             </div>
-            {% endfor %}
         </div>
     </div>
-</div>{% endblock %}
+    {% endfor %}
+</div>
+{% endblock %}

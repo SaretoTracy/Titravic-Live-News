@@ -23,7 +23,7 @@ h3 {
     text-align: center;
     padding-bottom: 0.5rem;
     font-family: 'Righteous', cursive;
-    color: black;
+    color: white;
 }
 
 .sos p a {
@@ -90,8 +90,19 @@ h4 {
 }
 
 .card-image {
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 5px;
+    height: 30vh;
+    margin-bottom: 2rem;
+}
+
+.headline {
+    padding-top: 4rem;
+}
+
+.headline h4 a {
+    color: #fff;
+    text-shadow: 2px 2px 2px black;
+    font-size: 20px;
 }
