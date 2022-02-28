@@ -19,6 +19,12 @@ a {
     box-shadow: 2px 2px 2px 6px #B7391E;
 }
 
+.source {
+    background: #B7391E;
+    border: none;
+    border-radius: 20px;
+}
+
 h3 {
     text-align: center;
     padding-bottom: 0.5rem;
