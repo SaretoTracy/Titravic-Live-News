@@ -1,6 +1,7 @@
 # Getting api key
 from app import app
 import urllib.request , json
+import os
 from app.models.news import Sources, Articles
 
 
@@ -8,7 +9,8 @@ from app.models.news import Sources, Articles
 # articles =Articles.articles
 
 #Getting api key
-api_key = app.config['NEWS_API_KEY']
+api_key = os.environ.get('NEWS_API_KEY')
+print(api_key)
 #getting source base url
 base_url_source = app.config['NEWS_API_SOURCE_URL']
 #getting articles base url
